@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import companiesSlice from "./companiesSlice/companiesReducer";
+import { companiesSlice } from "./companiesSlice";
 
 export const reducers = {
   meetingPlans: companiesSlice.reducer,

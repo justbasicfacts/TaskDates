@@ -1,4 +1,4 @@
 import { Company } from "../shared/types/api";
-import { apiProvider } from "./apiProvider";
+import { getAll } from "./getAll";
 
-export const getAllCompanies = apiProvider.getAll<Company>("companies");
+export const getAllCompanies = getAll<Company>("companies");

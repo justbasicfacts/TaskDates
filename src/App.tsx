@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { getCompanies } from "./store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "./store/store";
-import { companiesSelector } from "./store/companiesSlice/companiesSelector";
+import { companiesSelector } from "./store/companiesSelector";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Company } from "./components/Company/Company";
 import "./_App.scss";

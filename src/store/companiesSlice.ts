@@ -1,32 +1,30 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CompanyUI } from "../../shared/types/modals/CompanyUI";
-import { SelectedTimeSlot } from "../../shared/types/modals/SelectedTimeSlot";
-import { getCompanies } from "../actions";
-import { generateCompanyUIList } from "../../utils/generateCompanyUIList";
+import { CompanyUI, SelectedTimeSlot } from "../shared/types";
+import { generateCompanyUIList } from "../utils";
+import { getCompanies } from "./actions";
+import { InitialState } from "./initialState";
 
-const initialState: CompaniesInitialState = {
+const initialState: InitialState = {
   companies: [] as CompanyUI[],
   selectedTimeSlots: [] as SelectedTimeSlot[],
 };
 
-export interface CompaniesInitialState {
-  companies: CompanyUI[];
-  selectedTimeSlots: SelectedTimeSlot[];
-}
-
-const companiesSlice = createSlice({
+export const companiesSlice = createSlice({
   name: "meetingPlans",
   initialState,
   reducers: {
     selectTimeSlot: (state, action: PayloadAction<SelectedTimeSlot>) => {
+      const { companyId, startTime, endTime, day } = action.payload;
+
       const selectedTimeSlotIndex = state.selectedTimeSlots.findIndex(
-        (timeSlot) => timeSlot.companyId === action.payload.companyId
+        (timeSlot) => timeSlot.companyId === companyId
       );
+
       const selectedSlot = {
-        companyId: action.payload.companyId,
-        startTime: action.payload.startTime,
-        endTime: action.payload.endTime,
-        day: action.payload.day,
+        companyId,
+        startTime,
+        endTime,
+        day,
       };
 
       if (selectedTimeSlotIndex > -1) {
@@ -59,5 +57,3 @@ const companiesSlice = createSlice({
     });
   },
 });
-
-export default companiesSlice;
