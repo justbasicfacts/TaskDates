@@ -1,6 +1,5 @@
 import { RenderResult, screen } from "@testing-library/react";
 import { mockDay } from "../../mocks/component-data/day";
-import { initialMockState } from "../../utils";
 import { renderWithProviders } from "../../utils/renderWithProviders";
 import { Day } from "./Day";
 

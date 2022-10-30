@@ -3,10 +3,9 @@ import {
   fireEvent,
   RenderResult,
   screen,
-  waitFor,
 } from "@testing-library/react";
 import { mockSlot } from "../../mocks/component-data/slot";
-import { getFormattedTime, initialMockState } from "../../utils";
+import { getFormattedTime } from "../../utils";
 import { renderWithProviders } from "../../utils/renderWithProviders";
 import { Slot } from "./Slot";
 

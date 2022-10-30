@@ -5,7 +5,6 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { mockCompany } from "../../mocks/component-data/company";
-import { initialMockState } from "../../utils";
 import { renderWithProviders } from "../../utils/renderWithProviders";
 import { Company } from "./Company";
 
