@@ -25,6 +25,10 @@ An application to organize meetings for companies.
    ```sh
    npm install
    ```
+3. Install Husky
+   ```sh
+   npm run prepare
+   ```
 
 In the project directory, you can run:
 
