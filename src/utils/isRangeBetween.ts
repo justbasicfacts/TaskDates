@@ -1,6 +1,9 @@
-import { isBefore } from "date-fns";
-import { sameOrAfter } from "./sameOrAfter";
+import { isBefore, isAfter } from "date-fns";
 
-export const isRangeBetween = (dateToCheck: Date, startDate: Date, endDate: Date) => {
-    return isBefore(startDate, dateToCheck) && sameOrAfter(endDate, dateToCheck);
+export const isRangeBetween = (
+  dateToCheck: Date,
+  startDate: Date,
+  endDate: Date
+) => {
+  return isBefore(startDate, dateToCheck) && isAfter(endDate, dateToCheck);
 };

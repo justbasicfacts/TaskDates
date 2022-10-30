@@ -1,3 +1,4 @@
+import { isEqual } from "date-fns";
 import { TimeSlotUI } from "../shared/types/modals/TimeSlotUI";
 import { isRangeBetween } from "./isRangeBetween";
 
@@ -17,6 +18,8 @@ export const checkDateOverlap = ({
 
   return (
     isRangeBetween(selectedStartTime, currentStartTime, currentEndTime) ||
-    isRangeBetween(selectedEndTime, currentStartTime, currentEndTime)
+    isRangeBetween(selectedEndTime, currentStartTime, currentEndTime) ||
+    (isEqual(currentStartTime, selectedStartTime) &&
+      isEqual(currentEndTime, selectedEndTime))
   );
 };
