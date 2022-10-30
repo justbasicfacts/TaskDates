@@ -28,10 +28,10 @@
     "test:coverage": "npm test -- --env=jsdom --coverage --watchAll=false --silent=false",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/{**/*,*}.{tsx,ts,js,css}",
-    "lint": "tsc --noEmit && eslint src --max-warnings=0",
+    "lint": "lint-staged",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "pre-push": ""
+    "pre-commit": "lint-staged && react-scripts test --coverage --watchAll=false --silent",
+    "pre-push": "react-scripts test --watchAll=false --silent"
   },
   "eslintConfig": {
     "extends": [
