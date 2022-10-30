@@ -2,11 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CompanyUI, SelectedTimeSlot } from "../shared/types";
 import { generateCompanyUIList } from "../utils";
 import { getCompanies } from "./actions";
-import { InitialState } from "./initialState";
+import { MeetingPlansState } from "../shared/types/modals/MeetingPlansState";
 
-const initialState: InitialState = {
+const initialState: MeetingPlansState = {
   companies: [] as CompanyUI[],
   selectedTimeSlots: [] as SelectedTimeSlot[],
+  status: "pending",
 };
 
 export const companiesSlice = createSlice({
@@ -44,16 +45,19 @@ export const companiesSlice = createSlice({
     builder.addCase(getCompanies.pending, (state) => {
       state.companies = [] as CompanyUI[];
       state.selectedTimeSlots = [] as SelectedTimeSlot[];
+      state.status = "pending";
     });
 
     builder.addCase(getCompanies.fulfilled, (state, { payload }) => {
       const companyUIList = generateCompanyUIList(payload);
       state.companies = companyUIList;
+      state.status = "complete";
     });
 
     builder.addCase(getCompanies.rejected, (state) => {
       state.companies = [] as CompanyUI[];
       state.selectedTimeSlots = [] as SelectedTimeSlot[];
+      state.status = "pending";
     });
   },
 });

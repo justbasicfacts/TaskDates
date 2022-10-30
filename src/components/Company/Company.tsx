@@ -1,11 +1,11 @@
-import Day from "../Day/Day";
 import { CompanyUI } from "../../shared/types/modals/CompanyUI";
 import "./_Company.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { companiesSelector } from "../../store/companiesSelector";
 import { SelectedTimeSlot } from "../../shared/types";
+import { companiesSelector } from "../../store";
 import { SelectedSlot } from "../SelectedSlot/SelectedSlot";
+import { Day } from "../Day";
 
 interface CompanyProps {
   company: CompanyUI;
@@ -39,11 +39,7 @@ export const Company = ({ company }: CompanyProps) => {
       </div>
       <div className="day-list">
         {days.map((day, index) => (
-          <Day
-            key={`day_company_${id}_${index}`}
-            daySlot={day}
-            companyId={id}
-          />
+          <Day key={`company-${id}_${index}`} daySlot={day} companyId={id} />
         ))}
       </div>
     </div>

@@ -22,11 +22,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:server": "json-server -–watch db.json ",
-    "start": "set PORT=3010 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "npm test -- --env=jsdom --coverage --watchAll=false --silent",
+    "test:coverage": "npm test -- --env=jsdom --coverage --watchAll=false --silent=false",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/{**/*,*}.{tsx,ts,js,css}",
     "lint": "tsc --noEmit && eslint src --max-warnings=0",
@@ -54,14 +53,25 @@
   },
   "devDependencies": {
     "sass": "^1.55.0",
-    "json-server": "^0.17.0",
     "prettier": "^2.6.2",
     "husky": "^8.0.1",
-    "lint-staged":"^13.0.3",
+    "lint-staged": "^13.0.3",
     "msw": "^0.47.4"
   },
   "lint-staged": {
     "*{ts,tsx}": "eslint --fix",
     "*{tsx,scss,md}": "prettier --write"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/shared",
+      "<rootDir>/src/mocks",
+      "reportWebVitals.ts",
+      ".index.ts",
+      ".index.tsx"
+    ]
   }
 }

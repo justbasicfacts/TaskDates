@@ -4,16 +4,17 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { worker } from "./mocks/browser";
+
+if (process.env.NODE_ENV === "development") worker.start();
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(
-  <React.Fragment>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.Fragment>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
