@@ -10,19 +10,28 @@ import "./_App.scss";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
 
-  const { companies } = useSelector(companiesSelector);
+  const { companies, status } = useSelector(companiesSelector);
 
   useEffect(() => {
     dispatch(getCompanies());
   }, [dispatch]);
 
   return (
-    <div className="app container">
-      <div className="row">
-        {companies.map((company) => {
-          return <Company key={`company-${company.id}`} company={company} />;
-        })}
-      </div>
+    <div className="app container" data-testid="App">
+      {status === "complete" ? (
+        <div className="row">
+          {companies.map((company, index) => {
+            return (
+              <Company
+                key={`company-${company.id}_${index}`}
+                company={company}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 }

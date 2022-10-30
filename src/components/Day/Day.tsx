@@ -6,7 +6,7 @@ interface DayProps {
   companyId: number;
   daySlot: DaySlotUI;
 }
-const Day = ({ companyId, daySlot }: DayProps) => {
+export const Day = ({ companyId, daySlot }: DayProps) => {
   const { slots } = daySlot;
 
   return (
@@ -15,7 +15,7 @@ const Day = ({ companyId, daySlot }: DayProps) => {
       <div>
         {slots.map((timeSlot, index) => (
           <Slot
-            key={companyId + index}
+            key={`company-${companyId}_${index}`}
             companyId={companyId}
             startTime={timeSlot.startTime}
             endTime={timeSlot.endTime}
@@ -25,5 +25,3 @@ const Day = ({ companyId, daySlot }: DayProps) => {
     </div>
   );
 };
-
-export default Day;

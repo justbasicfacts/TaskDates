@@ -1,5 +1,4 @@
-import { InitialState } from "./initialState";
 import { RootState } from "./store";
 
-export const companiesSelector = (state: RootState): InitialState =>
+export const companiesSelector = (state: RootState) =>
   state.meetingPlans;
