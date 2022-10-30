@@ -2,8 +2,8 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TimeSlotUI } from "../../shared/types/modals/TimeSlotUI";
-import companiesSlice from "../../store/companiesSlice/companiesReducer";
-import { companiesSelector } from "../../store/companiesSlice/companiesSelector";
+import { companiesSelector } from "../../store/companiesSelector";
+import { companiesSlice } from "../../store/companiesSlice";
 import { AppDispatch } from "../../store/store";
 import { checkDateOverlap } from "../../utils/checkDateOverlap";
 import { getFormattedDate } from "../../utils/getFormattedDate";
@@ -69,6 +69,7 @@ export const Slot = ({
       })}
       onClick={handleSlotClick}
       title={isSelected ? "Click to unselect" : undefined}
+      data-testid="Slot"
     >
       <span className="slot__time">
         {getFormattedTime(startTime)}

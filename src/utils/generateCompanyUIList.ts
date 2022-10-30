@@ -18,7 +18,6 @@ export const generateCompanyUIList = (payload: Company[]) => {
             );
             if (!foundDaySlot) {
                 daySlots.push({
-                    companyId: company.id,
                     day: uniqueDate,
                     slots: [timeSlotForUI],
                 });

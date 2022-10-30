@@ -1,15 +1,19 @@
 .company {
-    height: 100vh;
-    overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto;
 
-    &-name {
-        background-color: white;
-        padding: 8px;
-        margin-top: 16px;
-        margin-bottom:16px;
+  &__header {
+    background-color: white;
+  }
 
-        border: 1px solid;
-        border-color: gray;
-        border-radius: 4px;
-    }
+  &__name {
+    background-color: white;
+    padding: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 4px;
+  }
 }
