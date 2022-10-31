@@ -1,6 +1,6 @@
 import { Company } from "../shared/types";
-import { CompanyUI } from "../shared/types/modals/CompanyUI";
-import { DaySlotUI } from "../shared/types/modals/DaySlotUI";
+import { CompanyUI } from "../shared/types/models/CompanyUI";
+import { DaySlotUI } from "../shared/types/models/DaySlotUI";
 import { getFormattedDate } from "./getFormattedDate";
 
 

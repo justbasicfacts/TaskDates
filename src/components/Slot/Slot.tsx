@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TimeSlotUI } from "../../shared/types/modals/TimeSlotUI";
+import { TimeSlotUI } from "../../shared/types/models/TimeSlotUI";
 import { companiesSelector } from "../../store/companiesSelector";
 import { companiesSlice } from "../../store/companiesSlice";
 import { AppDispatch } from "../../store/store";

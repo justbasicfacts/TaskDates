@@ -1,4 +1,4 @@
-import { CompanyUI } from "../../shared/types/modals/CompanyUI";
+import { CompanyUI } from "../../shared/types/models/CompanyUI";
 import "./_Company.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
