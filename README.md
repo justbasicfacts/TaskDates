@@ -1,7 +1,5 @@
 ## Meeting Planner
 
-#### Example:
-
 An application to organize meetings for companies.
 
 ## Screenshot
