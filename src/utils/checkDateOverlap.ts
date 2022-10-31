@@ -1,5 +1,5 @@
 import { isEqual } from "date-fns";
-import { TimeSlotUI } from "../shared/types/modals/TimeSlotUI";
+import { TimeSlotUI } from "../shared/types/models/TimeSlotUI";
 import { isRangeBetween } from "./isRangeBetween";
 
 interface CheckDateOverlapProps {

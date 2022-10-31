@@ -1,4 +1,4 @@
-import { DaySlotUI } from "../../shared/types/modals/DaySlotUI";
+import { DaySlotUI } from "../../shared/types/models/DaySlotUI";
 import { getReadableDay } from "../../utils";
 import { Slot } from "../Slot/Slot";
 import "./_Day.scss";

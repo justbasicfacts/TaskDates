@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CompanyUI, SelectedTimeSlot } from "../shared/types";
 import { generateCompanyUIList } from "../utils";
 import { getCompanies } from "./actions";
-import { MeetingPlansState } from "../shared/types/modals/MeetingPlansState";
+import { MeetingPlansState } from "../shared/types/models/MeetingPlansState";
 
 const initialState: MeetingPlansState = {
   companies: [] as CompanyUI[],
